@@ -1,7 +1,8 @@
 <h1>Product List</h1>
 <% @products.each do |product| %>
-  <h2><%= product.name %></h2>
-  <p><%= product.description %></p>
+  <h2><a href="/products/<%= product.id %>"><%= product.name %></a></h2>
   <h3>$<%= product.price %></h3>
+  <p><a href="/products/<%= product.id %>/edit">Edit</a></p>
+  <p><a data-confirm="Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow">Delete</a></p>
   <br>
 <% end %>
