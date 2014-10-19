@@ -1,19 +1,25 @@
-<h1>Edit Product</h1>
+<div class="col-md-9" id="stuff">
+  <h1>Edit Product</h1>
 
-<%= form_for @product do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%= form_for @product do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.label :photo %>
+      <%= f.text_field :photo %>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

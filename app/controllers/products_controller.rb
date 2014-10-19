@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.order(:price)
   end
 
   def show
@@ -27,5 +27,9 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find_by(:id => params[:id])
     @product.destroy
+  end
+
+  def discount_items
+    @discount_products = Product.where("price < ?", 2)
   end
 end
