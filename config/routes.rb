@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'products' => 'products#index'
   get 'products/new' => 'products#new'
-  get 'products/discount_items' => 'products#discount_items'
   get 'products/:id' => 'products#show', :as => :product
   post 'products' => 'products#create'
   get 'products/:id/edit' => 'products#edit'

@@ -8,7 +8,7 @@
   <h2><%= @product.display_price %></h2>
   <p>
     <a href="/products/<%= @product.id %>/edit">Edit</a>
-    <a href="/products/<%= @product.id %>/destroy">Delete</a>
+    <a rel="nofollow" data-method="delete" href="/products/<%= @product.id %>/">Delete</a>
   </p>
 </div>
 <div class="col-md-3" id="shopping-cart">

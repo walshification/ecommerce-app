@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#main_content {
+  margin-top: 70px;
+}
+
 .jumbotron {
   margin-top: 70px;
 }
@@ -13,12 +17,10 @@
 
 #shopping-cart {
   float: right;
-  margin-top: 70px;
 }
 
 #stuff {
   float: left;
-  margin-top: 70px;
 }
 
 body {
