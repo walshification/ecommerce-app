@@ -1,15 +1,13 @@
 <div class="col-md-9" id="stuff">
-  <h1><%= @product.name %></h1>
+  <h1><%= @product.name %> <small>By: <%= @product.vendor.name %></small></h1>
 
   <img src="<%= @product.photo %>">
 
   <p><%= @product.description %></p>
 
   <h2><%= @product.display_price %></h2>
-  <p>
-    <a href="/products/<%= @product.id %>/edit">Edit</a>
-    <a rel="nofollow" data-method="delete" href="/products/<%= @product.id %>/">Delete</a>
-  </p>
+  <p><a href="/products/<%= @product.id %>/edit">Edit</a></p>
+  <p><a rel="nofollow" data-method="delete" href="/products/<%= @product.id %>/">Delete</a></p>
 </div>
 <div class="col-md-3" id="shopping-cart">
   <div class="panel panel-default"> 

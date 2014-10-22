@@ -1,4 +1,8 @@
 class Product < ActiveRecord::Base
+  belongs_to :vendor
+  has_many :photos
+  has_many :options
+
   def tax
     (price * 0.1).round(2)
   end
