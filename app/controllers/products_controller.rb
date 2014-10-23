@@ -7,10 +7,11 @@ class ProductsController < ApplicationController
   def show
     if params[:id] == "random"
       @product = Product.all
-      @product = product.sample
+      @product = products.sample
     else
       @product = Product.find_by(:id => params[:id])
     end
+    @order = Order.new
   end
 
   def new
@@ -19,6 +20,10 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(params[:product])
+    options = params[:product][:options].split(",")
+    options.each do |options|
+      product.options.create(:name => option)
+    end
     flash[:success] = "Product successfully added!"
     redirect_to "/products/#{@product.id}"
   end

@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   has_many :photos
   has_many :options
 
+  attr_accessor :options_list
+
   def tax
     (price * 0.1).round(2)
   end
@@ -23,7 +25,6 @@ class Product < ActiveRecord::Base
   end
 
   def discount
-
   end
 
   def price_and_tax
