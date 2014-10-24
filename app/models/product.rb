@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :vendor
   has_many :photos
   has_many :options
+  has_many :orders
 
   attr_accessor :options_list
 
@@ -28,5 +29,6 @@ class Product < ActiveRecord::Base
   end
 
   def price_and_tax
+    price + tax
   end
 end

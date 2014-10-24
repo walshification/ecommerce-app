@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023014338) do
+ActiveRecord::Schema.define(version: 20141024010840) do
 
   create_table "options", force: true do |t|
     t.string   "name"
@@ -24,9 +24,10 @@ ActiveRecord::Schema.define(version: 20141023014338) do
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "quantity"
-    t.decimal  "total",      precision: 10, scale: 0
+    t.decimal  "total",               precision: 9, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "confirmation_number"
   end
 
   create_table "photos", force: true do |t|

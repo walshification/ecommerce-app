@@ -1,0 +1,13 @@
+<div class="col-md-9" id="stuff">
+  <h1>Success!</h1>
+  <h2>Order summary:</h2>
+
+  <p>x<%= @order.quantity %> <%= @current_product.name %>, <%= @current_product.price %> each</p>
+
+  <p>Subtotal: <%= @subtotal %></p>
+  <p>Tax: $<%= @current_order_tax %></p>
+  <p>Total: $<%= @order.total %></p>
+  <br>
+  <br>
+  <p>Confirmation Number: <%= @order.confirmation_number %></p>
+</div>

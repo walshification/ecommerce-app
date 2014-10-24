@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'pages#home'
+  
   get 'products' => 'products#index'
   get 'products/new' => 'products#new'
   get 'product/:id' => 'orders#new'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   patch 'products/:id' => 'products#update'
   delete 'products/:id' => 'products#destroy'
   get 'about' => 'pages#about'
+
   post 'orders' => 'orders#create'
   
   # The priority is based upon order of creation: first created -> highest priority.

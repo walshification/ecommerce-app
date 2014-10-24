@@ -5,13 +5,14 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @order = Order.new
+    
     if params[:id] == "random"
       @product = Product.all
       @product = products.sample
     else
       @product = Product.find_by(:id => params[:id])
     end
-    @order = Order.new
   end
 
   def new
