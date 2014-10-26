@@ -1,6 +1,3 @@
-User.create!([
-  {email: "walshification@gmail.com", encrypted_password: "$2a$10$vQK0Lss.JDYRlSB1gMvPDOkoUlLrp1C2McAmYvzwUeUL/vMizwXeO", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2014-10-24 02:12:10", last_sign_in_at: "2014-10-24 00:41:04", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
-])
 Option.create!([
   {name: "red", product_id: 1},
   {name: "blue", product_id: 1},
