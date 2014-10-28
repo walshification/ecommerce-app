@@ -2,6 +2,10 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @products = Product.order(:price) if params[:order] == "price"
+    # @products = Product.where('price <= ?', 2.0) if params[:feature] = "discount_items"
+    @products = Product.joins(:categories).where("categories.name = ?", params[:category]) if params[:category]
+
+    @categories = Category.all
   end
 
   def show
@@ -13,6 +17,8 @@ class ProductsController < ApplicationController
     else
       @product = Product.find_by(:id => params[:id])
     end
+
+    @carted_products = Product.joins(:orders).where("orders.")
   end
 
   def new
@@ -45,9 +51,5 @@ class ProductsController < ApplicationController
     @product.destroy
     flash[:success] = "Product successfully deleted!"
     redirect_to '/products'
-  end
-
-  def discount_items
-    @discount_products = Product.where("price < ?", 2)
   end
 end

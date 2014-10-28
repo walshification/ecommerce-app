@@ -1,6 +1,15 @@
 class OrdersController < ApplicationController
   def create
-    @order = current_user.orders.create(params[:order])
+    @order = current_user.order
+    if @order.status = "cart"
+      @current_product = Product.find(current_product_id.to_i)
+      @order.update(:) 
+    else
+      @order = current_user.orders.create(params[:order])
+
+    end
+
+
     current_product_id = params[:order][:product_id]
     @current_product = Product.find(current_product_id.to_i)
 

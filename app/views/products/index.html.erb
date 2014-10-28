@@ -1,5 +1,18 @@
 <div class="col-md-9" id="stuff">
-  <h1>Product List <small></small></h1>
+  <h1>Product List</h1>
+  <div class="dropdown" id="sort">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Sort by:
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <% @categories.each do |category| %>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="/products/?category=<%= category.name %>"><%= category.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-md-4">
