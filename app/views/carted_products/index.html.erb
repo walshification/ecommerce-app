@@ -1,0 +1,14 @@
+<h1>Checkout</h1>
+
+<ul>
+  <% @carted_products.each do |carted_product| %>
+    <li>x<%= carted_product.quantity %>, <%= carted_product.product.name %>, <%= carted_product.product.price %> each</li>
+  <% end %>
+<p>
+<p>Subtotal = <%= number_to_currency(@subtotal, :unit => "$") %></p>
+<p>Tax = <%= number_to_currency(@tax, :unit => "$") %></p>
+<p>Total = <%= number_to_currency(@total_price, :unit => "$") %></p>
+
+<%= form_for @order do |f| %>
+    <%= f.submit "Buy Now!"%>
+<% end %>

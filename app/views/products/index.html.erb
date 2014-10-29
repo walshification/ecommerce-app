@@ -33,6 +33,11 @@
       <h2 class="panel-title"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h2> 
     </div>
     <div class="panel-body">
+      <ul>
+        <% @carted_products.each do |carted_product| %>
+          <li>x<%= carted_product.quantity %>, <%= carted_product.product.name %>, <%= carted_product.product.price %> each</li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

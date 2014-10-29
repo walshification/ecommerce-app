@@ -6,10 +6,12 @@ class ProductsController < ApplicationController
     @products = Product.joins(:categories).where("categories.name = ?", params[:category]) if params[:category]
 
     @categories = Category.all
+    @carted_products = CartedProduct.all
   end
 
   def show
-    @order = Order.new
+    @carted_product = CartedProduct.new
+    @carted_products = CartedProduct.all
     
     if params[:id] == "random"
       @product = Product.all
@@ -17,8 +19,6 @@ class ProductsController < ApplicationController
     else
       @product = Product.find_by(:id => params[:id])
     end
-
-    @carted_products = Product.joins(:orders).where("orders.")
   end
 
   def new
