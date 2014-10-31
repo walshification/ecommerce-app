@@ -77,13 +77,15 @@
     </div>
   </nav>
   <div class="container" id="main_content">
-    <% flash.each do |name, message| %>
-      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <%= message %>
-      </div>
-    <% end %>
-    <%= yield %>
+    <div class="col-md-12" id="stuff">
+      <% flash.each do |name, message| %>
+        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </div>
   <div class="container">
    <hr id="footer" align="center">

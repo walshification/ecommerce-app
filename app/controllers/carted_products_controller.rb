@@ -1,4 +1,8 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user!
+  # before_action :authenticate_user!, :only => [:index, :create]
+  # before_action :authenticate_user!, :except => [:index, :create]
+
   def create
     @carted_product = CartedProduct.create(params[:carted_product])
     current_product_id = params[:carted_product][:product_id]

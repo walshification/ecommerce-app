@@ -1,4 +1,10 @@
 class Product < ActiveRecord::Base
+  validates :name, :presence => true
+  validates :name, :uniqueness => true
+  validates :price, :numericality => true
+  validates :vendor_id, :presence => true
+
+
   belongs_to :vendor
   has_many :photos
   has_many :options

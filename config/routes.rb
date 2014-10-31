@@ -2,13 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#home'
   
-  get 'products' => 'products#index'
-  get 'products/new' => 'products#new'
-  get 'product/:id' => 'orders#new'
-  get 'products/:id' => 'products#show'
+  get 'products' => 'products#index', :as => :products
+  get 'products/new' => 'products#new', :as => :new_product
+  get 'products/:id' => 'products#show', :as => :product
   post 'products' => 'products#create'
-  get 'products/:id/edit' => 'products#edit'
-  patch 'products/:id' => 'products#update', :as => :product
+  get 'products/:id/edit' => 'products#edit', :as => :edit_product
+  patch 'products/:id' => 'products#update'
   delete 'products/:id' => 'products#destroy'
 
   get 'about' => 'pages#about'

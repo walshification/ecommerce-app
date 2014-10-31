@@ -1,4 +1,3 @@
-<div class="col-md-9" id="stuff">
   <h1>Product List</h1>
   <div class="dropdown" id="sort">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
@@ -13,31 +12,16 @@
     <% end %>
   </ul>
 </div>
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-md-4">
-        <div class="thumb">
-          <a href="/products/<%= product.id %>">
-            <h2><%= product.name %></h2>
-            <img src="<%= product.photo %>" height="200" width="200">
-          </a>
-          <p><%= product.display_price %></p>
-        </div>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-4">
+      <div class="thumb">
+        <a href="<%= product_path(product.id) %>">
+          <h2><%= product.name %></h2>
+          <img src="<%= product.photo %>" height="200" width="200">
+        </a>
+        <p><%= product.display_price %></p>
       </div>
-    <% end %>
-  </div>
-</div>
-<div class="col-md-3" id="shopping-cart">
-  <div class="panel panel-default"> 
-    <div class="panel-heading"> 
-      <h2 class="panel-title"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h2> 
     </div>
-    <div class="panel-body">
-      <ul>
-        <% @carted_products.each do |carted_product| %>
-          <li>x<%= carted_product.quantity %>, <%= carted_product.product.name %>, <%= carted_product.product.price %> each</li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+  <% end %>
 </div>
