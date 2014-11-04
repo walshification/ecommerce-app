@@ -43,3 +43,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'quiet_assets', group: :development
 gem 'devise'
+group :development, :test do
+  gem 'rspec-rails'
+end
+
