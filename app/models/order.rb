@@ -7,14 +7,19 @@ class Order < ActiveRecord::Base
     update(:status => "refunded")
   end
 
-  def sales_tax
-    total * 0.1
-  end
-
   def subtotal
-    
+    price = 0
+    carted_products.each do |carted_product|
+      price += carted_product.price
+    end
+    return price
   end
 
-  def purchase!
+  def sales_tax
+    subtotal * 0.1
   end
+
+  # def purchase!
+  #   update(:status => "purchased", :subtotal => subtotal, :tax => sales_tax)
+  # end
 end
